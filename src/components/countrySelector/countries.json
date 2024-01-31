@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Slovakia",
+    "code": "SK",
+    "flag": "https://flagcdn.com/sk.svg"
+  },
+  {
+    "name": "Czech Republic",
+    "code": "CZ",
+    "flag": "https://flagcdn.com/cz.svg"
+  },
+  {
+    "name": "Albania",
+    "code": "AL",
+    "flag": "https://flagcdn.com/al.svg"
+  },
+  {
+    "name": "Andorra",
+    "code": "AD",
+    "flag": "https://flagcdn.com/ad.svg"
+  },
+  {
+    "name": "Austria",
+    "code": "AT",
+    "flag": "https://flagcdn.com/at.svg"
+  },
+  {
+    "name": "Belgium",
+    "code": "BE",
+    "flag": "https://flagcdn.com/be.svg"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "code": "BA",
+    "flag": "https://flagcdn.com/ba.svg"
+  },
+  {
+    "name": "Bulgaria",
+    "code": "BG",
+    "flag": "https://flagcdn.com/bg.svg"
+  },
+  {
+    "name": "Canada",
+    "code": "CA",
+    "flag": "https://flagcdn.com/ca.svg"
+  },
+  {
+    "name": "Croatia",
+    "code": "HR",
+    "flag": "https://flagcdn.com/hr.svg"
+  },
+  {
+    "name": "Cyprus",
+    "code": "CY",
+    "flag": "https://flagcdn.com/cy.svg"
+  },
+  {
+    "name": "Denmark",
+    "code": "DK",
+    "flag": "https://flagcdn.com/dk.svg"
+  },
+  {
+    "name": "Estonia",
+    "code": "EE",
+    "flag": "https://flagcdn.com/ee.svg"
+  },
+  {
+    "name": "Faroe Islands",
+    "code": "FO",
+    "flag": "https://flagcdn.com/fo.svg"
+  },
+  {
+    "name": "Finland",
+    "code": "FI",
+    "flag": "https://flagcdn.com/fi.svg"
+  },
+  {
+    "name": "France",
+    "code": "FR",
+    "flag": "https://flagcdn.com/fr.svg"
+  },
+  {
+    "name": "Germany",
+    "code": "DE",
+    "flag": "https://flagcdn.com/de.svg"
+  },
+  {
+    "name": "Greece",
+    "code": "GR",
+    "flag": "https://flagcdn.com/gr.svg"
+  },
+  {
+    "name": "Greenland",
+    "code": "GL",
+    "flag": "https://flagcdn.com/gl.svg"
+  },
+  {
+    "name": "Hungary",
+    "code": "HU",
+    "flag": "https://flagcdn.com/hu.svg"
+  },
+  {
+    "name": "Iceland",
+    "code": "IS",
+    "flag": "https://flagcdn.com/is.svg"
+  },
+  {
+    "name": "Ireland",
+    "code": "IE",
+    "flag": "https://flagcdn.com/ie.svg"
+  },
+  {
+    "name": "Italy",
+    "code": "IT",
+    "flag": "https://flagcdn.com/it.svg"
+  },
+  {
+    "name": "Latvia",
+    "code": "LV",
+    "flag": "https://flagcdn.com/lv.svg"
+  },
+  {
+    "name": "Liechtenstein",
+    "code": "LI",
+    "flag": "https://flagcdn.com/li.svg"
+  },
+  {
+    "name": "Lithuania",
+    "code": "LT",
+    "flag": "https://flagcdn.com/lt.svg"
+  },
+  {
+    "name": "Luxembourg",
+    "code": "LU",
+    "flag": "https://flagcdn.com/lu.svg"
+  },
+  {
+    "name": "Macedonia",
+    "code": "MK",
+    "flag": "https://flagcdn.com/mk.svg"
+  },
+  {
+    "name": "Malta",
+    "code": "MT",
+    "flag": "https://flagcdn.com/mt.svg"
+  },
+  {
+    "name": "Monaco",
+    "code": "MC",
+    "flag": "https://flagcdn.com/mc.svg"
+  },
+  {
+    "name": "Montenegro",
+    "code": "ME",
+    "flag": "https://flagcdn.com/me.svg"
+  },
+  {
+    "name": "Netherlands",
+    "code": "NL",
+    "flag": "https://flagcdn.com/nl.svg"
+  },
+  {
+    "name": "Norway",
+    "code": "NO",
+    "flag": "https://flagcdn.com/no.svg"
+  },
+  {
+    "name": "Poland",
+    "code": "PL",
+    "flag": "https://flagcdn.com/pl.svg"
+  },
+  {
+    "name": "Portugal",
+    "code": "PT",
+    "flag": "https://flagcdn.com/pt.svg"
+  },
+  {
+    "name": "Romania",
+    "code": "RO",
+    "flag": "https://flagcdn.com/ro.svg"
+  },
+  {
+    "name": "San Marino",
+    "code": "SM",
+    "flag": "https://flagcdn.com/sm.svg"
+  },
+  {
+    "name": "Serbia",
+    "code": "RS",
+    "flag": "https://flagcdn.com/rs.svg"
+  },
+  {
+    "name": "Slovenia",
+    "code": "SI",
+    "flag": "https://flagcdn.com/si.svg"
+  },
+  {
+    "name": "Spain",
+    "code": "ES",
+    "flag": "https://flagcdn.com/es.svg"
+  },
+  {
+    "name": "Sweden",
+    "code": "SE",
+    "flag": "https://flagcdn.com/se.svg"
+  },
+  {
+    "name": "Switzerland",
+    "code": "CH",
+    "flag": "https://flagcdn.com/ch.svg"
+  },
+  {
+    "name": "United Kingdom",
+    "code": "GB",
+    "flag": "https://flagcdn.com/gb.svg"
+  },
+  {
+    "name": "United States",
+    "code": "US",
+    "flag": "https://flagcdn.com/us.svg"
+  },
+  {
+    "name": "Vatican City",
+    "code": "VA",
+    "flag": "https://flagcdn.com/va.svg"
+  }
+]

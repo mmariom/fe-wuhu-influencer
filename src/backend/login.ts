@@ -8,7 +8,7 @@ const sessionObject = {
 }
 
 export const login = async (username: string, password: string) => {
-  let url = process.env.NODE_ENV == "development" ? `${process.env.NEXT_PUBLIC_DEV_URL}/v1/auth/login` : `${process.env.NEXT_PUBLIC_PROD_URL}/v1/auth/login`;
+  let url = process.env.NODE_ENV == "development" ? `${process.env.NEXT_PUBLIC_DEV_URL}/auth/login` : `${process.env.NEXT_PUBLIC_PROD_URL}/auth/login`;
   // Add your sign-in logic here using the email and password state values
   console.log('username:', username);
   console.log('Password:', password);
@@ -44,17 +44,19 @@ export const login = async (username: string, password: string) => {
 };
 
 
+
 export const getSession = async () => {
-  let url = process.env.NODE_ENV == "development" ? `${process.env.NEXT_PUBLIC_DEV_URL}/v1/auth/refresh` : `${process.env.NEXT_PUBLIC_PROD_URL}/v1/auth/refresh`;
+  let url = process.env.NODE_ENV == "development" ? `${process.env.NEXT_PUBLIC_DEV_URL}/auth/refresh` : `${process.env.NEXT_PUBLIC_PROD_URL}/auth/refresh`;
   // // Add your sign-in logic here using the email and password state values
   const accessToken: any = cookies().get('wuhu-accessToken') ?? '';
   const refreshToken: any = cookies().get('wuhu-refreshToken') ?? '';
-  if(!accessToken && !refreshToken) {
-      sessionObject.authorized = false;
-      sessionObject.accessToken = "";
-      return sessionObject;
+
+  if (!accessToken && !refreshToken) {
+    sessionObject.authorized = false;
+    sessionObject.accessToken = "";
+    return sessionObject;
   }
-  console.log("accessToken Token", accessToken);
+
   let decodedToken:any = jwtDecode(accessToken.value.toString()) != undefined ? jwtDecode(accessToken.value.toString()) : {
       "email": "",
       "firstName": "",
@@ -62,45 +64,52 @@ export const getSession = async () => {
       "iat": 0,
       "exp": 0
   };
-  console.log("Decoded Token", decodedToken);
+  // try {
+  //   decodedToken = jwtDecode(accessToken.value.toString());
+  // } catch (error) {
+  //   console.error("Error decoding token: ", error);
+  //   decodedToken = null;
+  // }
 
   if (decodedToken) {
     let currentDate = new Date();
-    // JWT exp is in seconds
-    
+
+    // Check if access token is expired
     if ((decodedToken.exp * 1000) < currentDate.getTime()) {
-      console.log("currentDate.getTime()", currentDate.getTime());
-      console.log("decodedToken.exp * 1000", decodedToken?.exp * 1000);
-        let options = {
+      console.log("Access token expired, refreshing tokens...");
+
+      const options = {
         method: "POST",
         headers: {
           Accept: "*/*",
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${refreshToken.value}`
+
         },
-        body: JSON.stringify({
-          refresh: refreshToken.value,
-        }),
       };
 
       const resp = await fetch(url, options);
       if (!resp.ok) {
+        console.log("Unable to refresh tokens. Logging out.");
         sessionObject.authorized = false;
-        console.log("Session expired.");
         return sessionObject;
-      } 
+      }
 
       const response = await resp.json();
       cookies().set('wuhu-accessToken', response.accessToken)
+      cookies().set('wuhu-refreshToken', response.refreshToken)
+
       sessionObject.accessToken = response.accessToken;
       sessionObject.authorized = true;
     } else {
+      console.log("Access token valid.");
       sessionObject.authorized = true;
       sessionObject.accessToken = accessToken.value;
-      console.log("Valid token");
     }
   } else {
-    console.log("Token not decoded properly or is invalid.");
+    console.log("Invalid or missing access token.");
+    sessionObject.authorized = false;
   }
 
-  return sessionObject
+  return sessionObject;
 };

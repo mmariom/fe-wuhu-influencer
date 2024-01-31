@@ -1,0 +1,38 @@
+[
+    
+
+    {
+      "name": "Slovakia",
+      "code": "SK",
+      "phone": "+421",
+      "flag": "https://flagcdn.com/sk.svg"
+    },
+    {
+      "name": "Czech Republic",
+      "code": "CZ",
+      "phone": "+420",
+      "flag": "https://flagcdn.com/cz.svg"
+    },
+    {
+      "name": "Poland",
+      "code": "PL",
+      "phone": "+48",
+      "flag": "https://flagcdn.com/pl.svg"
+    },
+    {
+      "name": "Austria",
+      "code": "AT",
+      "phone": "+43",
+      "flag": "https://flagcdn.com/at.svg"
+    },
+    {
+      "name": "Hungary",
+      "code": "HU",
+      "phone": "+36",
+      "flag": "https://flagcdn.com/hu.svg"
+    }
+  
+    
+    
+  ]
+    
