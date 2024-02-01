@@ -1,18 +1,25 @@
 import React from 'react'
-import Header from "@/components/homepage/Header";
-import MainContent from "@/components/homepage/MainContent";
-import Footer from "@/components/homepage/Footer";
 import PortalHeader from "../../components/portal/PortalHeader";
+import PortalFooter from '@/components/portal/PortalFooter';
 
 const PortalLayout = ({ children }) => {
     return (
+      
         <>
 
             <PortalHeader/>
-            <main>{children}</main>
-            <Footer/>
 
-        </>
+            <main className="min-h-screen bg-gray-600">
+            <div className='mx-auto lg:ml-80'>
+          <section className='py-8'>
+            <div className='container px-4 mx-auto'>
+                {children}
+                
+                
+                </div></section> </div></main>
+            <PortalFooter/>
+
+            </>
     )
 }
 

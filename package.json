@@ -49,6 +49,9 @@
     "react-dom": "^18",
 
 
+    "react-helmet-async": "^2.0.4",
+
+
     "react-hot-toast": "^2.4.1",
 
 

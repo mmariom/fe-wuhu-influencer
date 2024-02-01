@@ -1,4 +1,3 @@
-import Home from "../components/Home";
 import HomeLayout from "./layouts/HomeLayout";
 import MainContent from "@/components/homepage/MainContent";
 export default function App() {

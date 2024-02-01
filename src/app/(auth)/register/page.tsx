@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Step1 } from "@/components/registration/Step1";
 import { Step2 } from "@/components/registration/Step2"; // Import Step2
 import { Step3 } from "@/components/registration/Step3"; // Import Step3
-import HomeLayout from "@/app/layouts/HomeLayout";
+import AuthLayout from "@/app/layouts/AuthLayout";
 import { CompanyData, FormData } from '@/components/registration/types'; 
 import { Step4 } from '@/components/registration/Step4';
 import { createApiRequestData } from './(utils)/createApiRequestData';
@@ -60,7 +60,7 @@ console.log(apiRequestData);
 
 
   return (
-      <HomeLayout>
+      <AuthLayout>
         <section className='py-16 xl:pb-56 bg-white overflow-hidden'>
           <div className='container px-4 mx-auto'>
             <div className='text-center max-w-md mx-auto'>
@@ -97,6 +97,6 @@ console.log(apiRequestData);
             </div>
           </div>
         </section>
-      </HomeLayout>
+      </AuthLayout>
   );
 }

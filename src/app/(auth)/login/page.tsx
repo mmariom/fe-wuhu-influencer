@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { login, getSession } from '../../../backend/login';
 import HomeLayout from "@/app/layouts/HomeLayout";
+import AuthLayout from '@/app/layouts/AuthLayout';
 // import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const meta = {
@@ -79,9 +80,9 @@ export default function Login() {
   };
 
   return (
-    <HomeLayout>
+    <AuthLayout>
 
-      <>
+      < >
 
         <section className='py-16 xl:pb-56 bg-white overflow-hidden'>
           <div className='container px-4 mx-auto'>
@@ -144,7 +145,7 @@ export default function Login() {
 
       </>
 
-    </HomeLayout>
+    </AuthLayout>
   );
 }
 
