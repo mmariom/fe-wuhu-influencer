@@ -16,7 +16,10 @@ const PortalLayout = ({ children }) => {
                 {children}
                 
                 
-                </div></section> </div></main>
+                </div>
+                </section>
+                 </div>
+                 </main>
             <PortalFooter/>
 
             </>

@@ -3,8 +3,7 @@ import React from 'react'
 const AccountMetrics = () => {
   return (
 
-
-<div className='w-full px-3 mb-3 md:mb-0'>
+<div>
 <section className="py-3">
   <div className="container px-4 mx-auto">
     <div className="flex flex-wrap items-center -mx-4 -mb-6">

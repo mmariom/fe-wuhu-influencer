@@ -4,8 +4,9 @@ import React from 'react'
 
 const PortalFooter = () => {
   return (
-    
-        <section className='relative py-16 bg-white overflow-hidden lg:ml-80'>
+    // <section className='relative py-16 bg-gray-200 overflow-hidden lg:ml-80'>
+
+        <section className='relative py-16 bg-gray-200 overflow-hidden lg:ml-80'>
           <img
             className='absolute top-0 left-0 h-full'
             src='flaro-assets/images/footers/gradientx4.svg'
