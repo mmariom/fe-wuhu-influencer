@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import {API} from '@/backend/utils/api';
+import API from '@/backend/utils/api';
 import { url } from '@/backend/utils/url';
 
 
