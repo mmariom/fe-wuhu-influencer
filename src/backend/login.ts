@@ -7,8 +7,42 @@ const sessionObject = {
   accessToken: "",
 }
 
+// Import the js-cookie module
+import Cookies from 'js-cookie';
+
+// export const login = async (username:string, password:string) => {
+//   let url = process.env.NODE_ENV === "development" ? `${process.env.NEXT_PUBLIC_DEV_URL}/auth/login` : `${process.env.NEXT_PUBLIC_PROD_URL}/auth/login`;
+//   let options = {
+//     method: "POST",
+//     credentials: 'include', // Important for sending cookies in cross-origin requests
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ username, password }),
+//   };
+
+//   try {
+//     const resp = await fetch(url, options);
+//     if (!resp.ok) throw new Error('Login failed');
+
+//     const { accessToken } = await resp.json(); // Assuming the response includes the accessToken directly
+//     // Set cookies on the client side
+//     Cookies.set('wuhu-accessToken', accessToken, { expires: 7 }); // Expires in 7 days
+
+//     // Assuming refreshToken is set by server as HttpOnly cookie and doesn't need to be manually set here
+
+//     return { authorized: true, accessToken };
+//   } catch (error) {
+//     console.error('Login error:', error);
+//     return { authorized: false, accessToken: "" };
+//   }
+// };
+
+
 export const login = async (username: string, password: string) => {
-  let url = process.env.NODE_ENV == "development" ? `${process.env.NEXT_PUBLIC_DEV_URL}/auth/login` : `${process.env.NEXT_PUBLIC_PROD_URL}/auth/login`;
+  const API_BASE_URL = process.env.NODE_ENV === 'development' ? process.env.NEST_PUBLIC_DEV_URL : process.env.NEST_PUBLIC_PROD_URL;
+
+  let url = `${API_BASE_URL}/auth/login`;
   // Add your sign-in logic here using the email and password state values
   console.log('username:', username);
   console.log('Password:', password);
@@ -33,8 +67,10 @@ export const login = async (username: string, password: string) => {
   const user = await resp.json();
   // localStorage.setItem('wuhu-accessToken', user.accessToken)
   // localStorage.setItem('wuhu-refreshToken', user.refreshToken)
-  cookies().set('wuhu-accessToken', user.accessToken)
-  cookies().set('wuhu-refreshToken', user.refreshToken)
+  cookies().set('accessToken', user.accessToken, { httpOnly: false, path: '/',sameSite: 'strict',secure: false});
+  cookies().set('refreshToken', user.refreshToken, { httpOnly: true, path: '/',sameSite: 'strict',secure: false});
+
+  
 
 
   sessionObject.authorized = true;
@@ -43,6 +79,92 @@ export const login = async (username: string, password: string) => {
   return sessionObject;
 };
 
+// export const login = async (username:string, password:string) => {
+//   const url = `${process.env.NEXT_PUBLIC_API_URL}/auth/login`; // Adjusted for simplicity
+
+//   try {
+//     const response = await fetch(url, {
+//       method: "POST",
+//       credentials: 'include', // Essential for cookies
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ username, password }),
+//     });
+
+//     if (!response.ok) {
+//       throw new Error('Login failed');
+//     }
+
+//     const { accessToken } = await response.json(); // Extracting the access token
+//     // Here, you handle the accessToken, e.g., setting it in your application's state
+
+//     // No need to manually set the refresh token cookie; the browser will handle it if 'credentials: include' is set
+//     return { authorized: true, accessToken };
+//   } catch (error) {
+//     console.error('Login error:', error);
+//     return { authorized: false, accessToken: "" };
+//   }
+// };
+
+
+
+
+
+
+
+
+
+// functions/auth.js or wherever you manage API calls
+// export async function login(username:string, password:string) {
+//   try {
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       credentials: 'include', // Necessary for cookies
+//       body: JSON.stringify({ username, password }),
+//     });
+    
+
+//     if (!response.ok) throw new Error('Login failed');
+
+//     const data = await response.json();
+//     // Assume data contains the accessToken or it's set as an HTTP-only cookie
+//     // Manage application state as needed, e.g., setting user context
+//     return { success: true, accessToken: data.accessToken };
+//   } catch (error) {
+//     console.error('Login error:', error);
+//     return { success: false };
+//   }
+// }
+
+
+
+// Example login function
+// export const login = async (username:string, password:string) => {
+//   const url = `${process.env.NEXT_PUBLIC_API_URL}/auth/login`; // Your backend login endpoint
+//   try {
+//     const response = await fetch(url, {
+//       method: 'POST',
+//       credentials: 'include', // Important: to receive cookies
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ username, password }),
+//     });
+
+//     if (!response.ok) {
+//       throw new Error('Login failed');
+//     }
+
+//     const data = await response.json();
+//     // Store access token in-memory or in React context, but NOT in local storage
+//     return { success: true, accessToken: data.accessToken };
+//   } catch (error) {
+//     console.error('Login error:', error);
+//     return { success: false };
+//   }
+// };
 
 
 export const getSession = async () => {

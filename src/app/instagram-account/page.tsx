@@ -28,7 +28,6 @@ export default function Index() {
         </div>
     
 
-        
 
         <AccountInfo/>
         <OffersList/>

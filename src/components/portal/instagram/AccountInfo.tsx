@@ -21,7 +21,8 @@ const AccountInfo = () => {
       try {
         // Assuming you have an Axios instance named `API` configured
         const response = await API.get(`${url}/instagram/account/get-account-details`);
-        console.log(response.data);
+        console.log(response, 'response');
+        console.log(response.data, 'response.data');
         setAccountDetails(response.data);
       } catch (error) {
         console.error('Failed to fetch account details:', error);

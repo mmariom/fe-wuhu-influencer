@@ -1,5 +1,5 @@
   
   
 export const url = process.env.NODE_ENV == "development" 
-? `${process.env.NEXT_PUBLIC_DEV_URL}` 
-: `${process.env.NEXT_PUBLIC_PROD_URL}`;
+? "http://localhost:3000/api/v1"
+: "http://localhost:3000/api/v1"

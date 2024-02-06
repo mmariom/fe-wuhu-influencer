@@ -6,8 +6,10 @@ import { cookies } from "next/headers";
 
 
 export const register = async (apiRequestData:any) => {
-    let baseUrl = process.env.NEXT_PUBLIC_DEV_URL || process.env.NEXT_PUBLIC_PROD_URL;
-    let url = `${baseUrl}/auth/register`;
+  const API_BASE_URL = process.env.NODE_ENV === 'development' ? process.env.NEST_PUBLIC_DEV_URL : process.env.NEST_PUBLIC_PROD_URL;
+
+    // let baseUrl = process.env.NEXT_PUBLIC_DEV_URL || process.env.NEXT_PUBLIC_PROD_URL;
+    let url = `${API_BASE_URL}/auth/register`;
 
     console.log("apiRequestData" + JSON.stringify(apiRequestData));
     let options = {
@@ -29,8 +31,8 @@ export const register = async (apiRequestData:any) => {
   
     const data = await resp.json();
     // Assuming the API sends back tokens upon successful registration
-    cookies().set('wuhu-accessToken', data.accessToken, { httpOnly: true, path: '/' });
-    cookies().set('wuhu-refreshToken', data.refreshToken, { httpOnly: true, path: '/' });
+    cookies().set('accessToken', data.accessToken, { httpOnly: false, path: '/',sameSite: 'strict',secure: false});
+    cookies().set('refreshToken', data.refreshToken, { httpOnly: true, path: '/',sameSite: 'strict',secure: false});
   
     return {
       authorized: true,
